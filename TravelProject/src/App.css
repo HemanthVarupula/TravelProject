@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+
+body {
+background: #66cee8;
+background: linear-gradient(90deg, rgba(102, 206, 232, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(235, 224, 141, 1) 100%);
+  background-size: cover;          /* Make the image cover the entire viewport */
+  background-repeat: no-repeat;    /* Prevent image tiling */
+  background-position: center;     /* Center the image */
+  background-attachment: fixed;    /* Optional: keeps background fixed during scroll */
+  overflow-x: hidden;
+}
+
+
