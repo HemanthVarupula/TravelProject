@@ -1,4 +1,5 @@
 import React from 'react'
+import Dummy from '../Dummy'
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto text-center">
         <h2 className="text-lg font-semibold text-white">TravelWithHemanth</h2>
         <p className="text-sm mt-1">Explore. Experience. Enjoy.</p>
-
+        <Dummy/>
         <p className="text-xs text-gray-500 mt-3">
           © {new Date().getFullYear()} TravelWithHemanth. All Rights Reserved.
         </p>
