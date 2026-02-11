@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dummy = () => {
   return (
-    <div> I love Playing Cricket</div>
+    <div> I love Playing Cricket ❤️</div>
   )
 }
 
