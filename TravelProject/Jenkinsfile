@@ -1,0 +1,48 @@
+pipeline{
+    agent any
+    tools{
+        nodejs 'Nodejsp'
+    }
+    stages{
+        stage("checkout"){
+            steps{
+                git branch :'main',
+                 url :"https://github.com/HemanthVarupula/TravelProject.git"
+            }
+        }
+          stage('Install Dependencies') {
+            steps {
+                dir('TravelProject'){
+                    sh 'npm install'
+                }
+            }
+        }
+        stage("build"){
+            steps{
+                dir("TravelProject"){
+                    sh 'npm run build'
+                }
+            }
+        }
+        stage("Check Build Folder") {
+    steps {
+        dir("TravelProject") {
+            sh 'ls -la'
+        }
+    }
+}
+
+    stage("Deploy") {
+    steps {
+        dir("TravelProject") {
+            sh '''
+                rm -rf /var/www/html/*
+                cp -r dist/* /var/www/html/
+                sudo systemctl restart nginx
+            '''
+        }
+    }
+}
+
+    }
+}
